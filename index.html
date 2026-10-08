@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Banking Kiosk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="kiosk">
+
+        <header class="topbar">
+            <div class="brand">
+                <div class="bank-logo">🏦</div>
+                <div>
+                    <h1>Smart Banking Kiosk</h1>
+                    <p>Senior Citizen Banking Assistance</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span id="systemStatus">System Ready</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <!-- CAMERA -->
+            <section class="camera-section">
+
+                <div class="camera-card">
+
+                    <div class="camera-header">
+                        <h2>Customer Verification</h2>
+                        <span id="cameraStatus">Camera Starting...</span>
+                    </div>
+
+                    <div class="camera-box">
+
+                        <video id="camera" autoplay muted playsinline></video>
+
+                        <div id="cameraPlaceholder" class="camera-placeholder">
+                            <div class="camera-icon">📷</div>
+                            <p>Camera Initializing...</p>
+                        </div>
+
+                        <div id="faceFrame" class="face-frame"></div>
+
+                        <div id="personDetected" class="person-detected">
+                            ✓ Person Detected
+                        </div>
+
+                    </div>
+
+                    <div class="verification-status">
+
+                        <div class="verify-item" id="faceStatus">
+                            <span>◯</span>
+                            <div>
+                                <strong>Face</strong>
+                                <small>Waiting</small>
+                            </div>
+                        </div>
+
+                        <div class="verify-item" id="passbookStatus">
+                            <span>◯</span>
+                            <div>
+                                <strong>Passbook</strong>
+                                <small>Waiting</small>
+                            </div>
+                        </div>
+
+                        <div class="verify-item" id="fingerprintStatus">
+                            <span>◯</span>
+                            <div>
+                                <strong>Fingerprint</strong>
+                                <small>Waiting</small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI / WELCOME -->
+            <section class="assistant-section">
+
+                <div class="assistant-card">
+
+                    <div class="robot">
+                        🤖
+                    </div>
+
+                    <h2 id="welcomeTitle">வணக்கம்!</h2>
+
+                    <p id="assistantMessage">
+                        உங்கள் சேவைக்காக காத்திருக்கிறது...
+                    </p>
+
+                    <div class="speaking" id="speakingIndicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <label>தமிழில் பேசுகிறது...</label>
+                    </div>
+
+                </div>
+
+
+                <!-- SERVICES -->
+                <div class="services" id="services">
+
+                    <button class="service-card" id="balanceBtn">
+                        <div class="service-icon">💰</div>
+                        <div>
+                            <h3>Balance Enquiry</h3>
+                            <p>கணக்கு இருப்பை சரிபார்க்க</p>
+                        </div>
+                    </button>
+
+                    <button class="service-card" id="withdrawBtn">
+                        <div class="service-icon">📝</div>
+                        <div>
+                            <h3>Cash Withdrawal</h3>
+                            <p>பணம் எடுப்பதற்கான கோரிக்கை</p>
+                        </div>
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- PROCESS PANEL -->
+        <section class="process-panel" id="processPanel">
+
+            <div class="process-header">
+                <h2>Banking Process</h2>
+                <span id="processStatus">Waiting</span>
+            </div>
+
+            <div class="process-content">
+
+                <div id="processMessage">
+                    Customer verification will start automatically.
+                </div>
+
+                <div id="withdrawRequest" class="withdraw-request hidden">
+
+                    <h3>Withdrawal Request</h3>
+
+                    <div class="request-row">
+                        <span>Customer</span>
+                        <strong id="customerName">Verified Customer ✓</strong>
+                    </div>
+
+                    <div class="request-row">
+                        <span>Amount</span>
+                        <strong id="withdrawAmount">₹5,000</strong>
+                    </div>
+
+                    <div class="request-row">
+                        <span>Status</span>
+                        <strong class="request-sent">Request Sent</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+            <span>Smart Banking Kiosk</span>
+            <span id="sessionStatus">Session Active</span>
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
